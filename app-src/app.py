@@ -8,9 +8,9 @@ languages = ["English", "Spanish", "French", "German", "Italian", "Portuguese", 
 def home():  
     return jsonify({"status": "online"})    # Return site status of online  
 
-@app.route("/languages")    # Return list of languages  
-def get_languages():  
-    return jsonify({"languages": languages})  
+@app.route("/verb/<input>")    # Return list of languages  
+def do_something(input):  
+    return input.upper()  
 
 if __name__ == "__main__":    # Start the server or listener operation  
     app.run(debug=True, host="0.0.0.0", port=PORT)
